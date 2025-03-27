@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.evenements {
+    padding: 20px;
+    text-align: center;
+}
+
+.evenements h1 {
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.event-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.event {
+    width: 30%;
+    margin: 15px 0;
+}
+
+.event img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.logo {
+    margin: 0 20px;
+    width: 100px;
+    height: 60px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

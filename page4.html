@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rendez-vous</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="page4.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f4;
+            }
+            .container {
+                max-width: 600px;
+                margin: auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .calendar {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            .calendar div {
+                padding: 20px;
+                text-align: center;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .calendar div:hover {
+                background-color: #ddd;
+            }
+            .selected {
+                background-color: #4CAF50;
+                color: white;
+            }
+            .form-container input, .form-container select, .form-container textarea {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+            }
+            .form-container button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                width: 100%;
+            }
+            .form-container button:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div class="container">
+            <h1>Prendre un rendez-vous</h1>
+    
+            <div class="calendar" id="calendar">
+                <!-- Les jours seront ajoutés dynamiquement avec JavaScript -->
+            </div>
+    
+            <div class="form-container">
+                <h2>Informations sur le rendez-vous</h2>
+                <label for="selectedDate">Date choisie :</label>
+                <input type="text" id="selectedDate" readonly placeholder="Sélectionner une date">
+                
+                <label for="appointmentTime">Heure du rendez-vous :</label>
+                <select id="appointmentTime">
+                    <option value="9:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                </select>
+    
+                <label for="customerName">Votre nom :</label>
+                <input type="text" id="customerName" placeholder="Entrez votre nom" required>
+    
+                <label for="customerEmail">Votre email :</label>
+                <input type="email" id="customerEmail" placeholder="Entrez votre email" required>
+    
+                <label for="description">Description du rendez-vous :</label>
+                <textarea id="description" placeholder="Détails du rendez-vous" rows="4"></textarea>
+    
+                <button onclick="submitAppointment()">Confirmer le rendez-vous</button>
+            </div>
+        </div>
+    
+        <script>
+            // Créer le calendrier dynamique
+            const calendarElement = document.getElementById("calendar");
+            const currentDate = new Date();
+            const currentMonth = currentDate.getMonth(); // Mois actuel
+            const currentYear = currentDate.getFullYear(); // Année actuelle
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay(); // Premier jour du mois
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate(); // Nombre de jours dans le mois
+    
+            // Afficher les jours de la semaine
+            const daysOfWeek = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+            daysOfWeek.forEach(day => {
+                const dayElement = document.createElement("div");
+                dayElement.textContent = day;
+                calendarElement.appendChild(dayElement);
+            });
+    
+            // Ajouter les jours du mois dans le calendrier
+            for (let i = 0; i < firstDay; i++) {
+                calendarElement.appendChild(document.createElement("div")); // Espaces vides avant le premier jour du mois
+            }
+    
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement("div");
+                dayElement.textContent = day;
+                dayElement.classList.add("day");
+                dayElement.onclick = () => selectDay(day);
+                calendarElement.appendChild(dayElement);
+            }
+    
+            // Fonction pour sélectionner un jour
+            function selectDay(day) {
+                const selectedDay = document.querySelector(".selected");
+                if (selectedDay) {
+                    selectedDay.classList.remove("selected");
+                }
+                const dayElement = document.querySelectorAll(".calendar .day")[day - 1];
+                dayElement.classList.add("selected");
+    
+                // Mettre à jour le champ de la date sélectionnée
+                const selectedDateField = document.getElementById("selectedDate");
+                selectedDateField.value = `${day}/${currentMonth + 1}/${currentYear}`;
+            }
+    
+            // Fonction pour confirmer le rendez-vous
+            function submitAppointment() {
+                const date = document.getElementById("selectedDate").value;
+                const time = document.getElementById("appointmentTime").value;
+                const name = document.getElementById("customerName").value;
+                const email = document.getElementById("customerEmail").value;
+                const description = document.getElementById("description").value;
+    
+                if (!date || !name || !email) {
+                    alert("Veuillez remplir tous les champs requis.");
+                    return;
+                }
+    
+                alert(`Rendez-vous confirmé !\nDate: ${date}\nHeure: ${time}\nNom: ${name}\nEmail: ${email}\nDescription: ${description}`);
+                // Optionnel: ici tu peux envoyer les informations vers une base de données ou une API
+            }
+        </script>
+        <footer>
+            <p><a href="index.html">Menu</a></p>
+        </footer>
+    
+    
+    </body>
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous contacter - Robbie Lens Photographie</title>
+    <link rel="stylesheet" href="contact.css"> <!-- Lien vers le fichier CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .reset-btn {
+            background-color: #f44336;
+        }
+        .reset-btn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Nous contacter !</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Plus.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Comment nous contacter ?</h2>
+            <p>Retrouver nous sur notre page <a href="https://www.instagram.com">Instagram</a> et sur notre compte <a href="https://twitter.com">Twitter</a><br> Numéro de téléphone : 03 80 70 10 50<br> Adresse e-mail : lens.photographie@gmail.com </p>
+            
+   
+    
+            <h2>Demander un devis</h2>
+            <p>Merci de compléter ce formulaire.<br>Nous vous recontacterons très bientôt.</p>
+            <div class="form-container">
+                <h2>Demande de Devis</h2>
+                <form action="mailto:noham2009@orange.fr" method="POST" enctype="text/plain">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom complet">
+        
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Votre adresse email">
+        
+                    <label for="phone">Numéro de téléphone</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Votre numéro de téléphone">
+        
+                    <label for="service">Type de service demandé</label>
+                    <select id="service" name="service" required>
+                        <option value="">Sélectionner un service</option>
+                        <option value="Photos seul ou à plusieurs">Photos seul ou à plusieurs</option>
+                        <option value="Shooting mode">Shooting mode</option>
+                        <option value="Retouches sur mesure">Retouches sur mersure</option>
+                        <option vale="Développement">Développement</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+        
+                    <label for="description">Description de votre projet</label>
+                    <textarea id="description" name="description" rows="4" required placeholder="Détaillez votre projet ici..."></textarea>
+        
+                    <button type="submit">Envoyer la demande</button>
+                    <button type="reset" class="reset-btn">Réinitialiser</button>
+                </form>
+            </div>
+        
+        </section>
+    
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Noham. Tous droits réservés.</p>
+    </footer>
+    
+</body>
+</html>

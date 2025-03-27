@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil – Robbie Lens Photographie</title>
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+        .gallery a {
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery a:hover {
+            transform: scale(1.05);
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><em>Robbie Lens Photographie</em></h1>
+        <nav>
+            <ul><em>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Plus.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul></em>
+        </nav>
+    </header>
+
+    
+        <div class="gallery">
+            <a href="page1.html">
+                <img src="photo1.jpg" alt="Boutique">
+            </a>
+            <a href="page2.html">
+                <img src="photo2.jpg" alt="Galerie">
+            </a>
+            <a href="page3.html">
+                <img src="photo3.jpg" alt="Image 3">
+            </a>
+            <a href="page4.html">
+                <img src="photo4.jpg" alt="Image 4">
+            </a>
+        </div>
+      
+    
+    
+
+    <footer>
+        <p>&copy; 2025 Noham. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

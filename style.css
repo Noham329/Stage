@@ -1,0 +1,85 @@
+/* Réinitialisation des marges et du padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections principales */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ajout de l'image de fond dans la section hero */
+main {
+    background-image: url('islands.jpg'); /* Chemin relatif */
+    background-size: cover;              /* L'image couvre tout l'élément */
+    background-position: center center;   /* L'image est centrée */
+    color: white;                         /* Texte en blanc pour le contraste */
+    padding: 400px 20px;                  /* Ajoute du padding pour espacer le contenu */
+    text-align: center;                   /* Centre le texte à l'intérieur */
+}
+
+
+
+
+
+

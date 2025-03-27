@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demander la géolocalisation</title>
+    <style>
+        .dialogue {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .dialogue button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Géolocalisation</h1>
+    <p>Nous aimerions utiliser votre position géographique pour vous proposer des services personnalisés.</p>
+
+    <button onclick="showDialogue()">Demander la géolocalisation</button>
+
+    <div id="dialogue" class="dialogue">
+        <h2>Nous avons besoin de votre position</h2>
+        <p>La géolocalisation nous permet de vous fournir des informations et services basés sur votre emplacement. Voulez-vous partager votre position avec nous ?</p>
+        <button onclick="demanderPosition()">Oui</button>
+        <button onclick="closeDialogue()">Non</button>
+    </div>
+
+    <script>
+        function showDialogue() {
+            document.getElementById('dialogue').style.display = 'block';
+        }
+
+        function closeDialogue() {
+            document.getElementById('dialogue').style.display = 'none';
+        }
+
+        function demanderPosition() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    alert("Votre position : Latitude " + position.coords.latitude + ", Longitude " + position.coords.longitude);
+                    closeDialogue();
+                }, function(error) {
+                    alert("Erreur : Impossible d'obtenir la position.");
+                    closeDialogue();
+                });
+            } else {
+                alert("La géolocalisation n'est pas supportée par ce navigateur.");
+                closeDialogue();
+            }
+        }
+    </script>
+</body>
+</html>
